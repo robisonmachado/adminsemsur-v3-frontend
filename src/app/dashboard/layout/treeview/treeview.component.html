@@ -14,7 +14,7 @@
     </a>
     <ul class="treeview-menu" style="display: block">
      
-      <li *ngFor="let modulo of modulos"><a href=""><i class="fa fa-circle-o"></i> {{modulo.name}}</a></li>
+      <li *ngFor="let modulo of mods | async"><a href=""><i class="fa fa-circle-o"></i> {{ modulo?.nome }}</a></li>
      
     </ul>
   </li>

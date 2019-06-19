@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Modulo } from 'src/app/api/modulo.interface';
+import { UserService } from 'src/app/user.service';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'semsur3-treeview',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreeviewComponent implements OnInit {
 
-  modulos = [
+  /* modulos = [
     {name: "Serviços Urbanos"},
     {name: "Iluminação Pública"},
     {name: "Cemitério"},
@@ -17,12 +21,24 @@ export class TreeviewComponent implements OnInit {
     {name: "Almoxarifado"},
     {name: "Arquivo"}    
   
-  ]
+  ] */
 
-  constructor() { }
+  modulos: Modulo[]
+
+  mods: Observable<Modulo[]>
+
+  constructor(private userService: UserService) {
+    console.log("TreeviewComponent --> constructor")
+    this.mods = this.userService.modulos().pipe(
+      tap(
+        mods => console.log('TreeviewComponent --> mods obtidos com sucesso')
+      )
+    )
+    this.modulos = this.userService.userModulos
+  }
 
   ngOnInit() {
-
+    
   }
 
 }

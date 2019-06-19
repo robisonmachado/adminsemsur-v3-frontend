@@ -3,13 +3,16 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 import {map, filter, catchError, mergeMap, tap, switchMap} from 'rxjs/operators';
 import { Modulo } from './api/modulo.interface';
-import { User } from './api/user';
+import { User } from './api/user.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  user: User
+  userModulos: Modulo[]
+  loggedIn = false
 
   constructor(private http: HttpClient) { 
 
@@ -23,8 +26,10 @@ export class UserService {
           resp => {
             console.log(resp.body.length)
             if(resp.body.length > 0){
+              console.log("UserService ==> Usuário logado com sucesso")
               return resp.body[0]
             }
+            console.log("UserService ==> Erro ao logar usuário: cpf ou senha não conferem")
             return null
           }
         )
@@ -41,6 +46,12 @@ export class UserService {
         map(
           resp => {
             return resp.body
+          }
+        ),
+        tap(
+          modulos => {
+            this.userModulos = modulos
+            console.log("UserService ==> Módulos obtidos com sucesso")
           }
         )
       )

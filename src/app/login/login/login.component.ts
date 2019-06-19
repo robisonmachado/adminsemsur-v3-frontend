@@ -46,19 +46,20 @@ export class LoginComponent implements OnInit {
     console.log('validando login')
     this.userService.login(form.cpf, form.senha).subscribe(
       user => {
-        if(user instanceof Object) this.router.navigate(['painel'])
-        else this.router.navigate(['login'])
+        if(user instanceof Object) {
+          this.userService.modulos().subscribe(
+            mods => {
+              console.log("LoginComponent --> modulos obtidos")
+              console.log("LoginComponent --> navegando para o painel")
+              this.router.navigate(['painel'])  
+            }
+          )
+                
+        }
+        else this.router.navigate(['login-error'])
       }
     )
     
-    this.userService.modulos().subscribe(
-      modulos => {
-        modulos.forEach(element => {
-          console.log(element)
-        });
-      }
-    )
-    //this.router.navigate(['painel'])
   }
 
 }
