@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "semsur2",
+      "semsur3",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "semsur2",
+      "semsur3",
       "kebab-case"
     ],
     "import-blacklist": [

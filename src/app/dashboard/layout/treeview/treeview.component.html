@@ -1,0 +1,27 @@
+<ul class="sidebar-menu tree" data-widget="tree">
+  <li class="header">PRINCIPAL</li>
+  
+
+           
+
+  <li class="treeview menu-open">
+    <a href="">
+      <i class="fa fa-files-o"></i>
+      <span>Módulos</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: block">
+     
+      <li *ngFor="let modulo of modulos"><a href=""><i class="fa fa-circle-o"></i> {{modulo.name}}</a></li>
+     
+    </ul>
+  </li>
+
+
+
+  
+  <li class="header">FERRAMENTAS</li>
+  
+</ul>

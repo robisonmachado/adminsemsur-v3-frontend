@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'semsur2-root',
+  selector: 'semsur3-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'semsur2-frontend-angular';
+  title = 'semsur3-frontend-angular';
 }

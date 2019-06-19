@@ -1,5 +1,5 @@
 {
-  "name": "semsur2-frontend-angular",
+  "name": "semsur3-frontend-angular",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,6 +19,10 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "admin-lte": "^2.4.11",
+    "icheck": "^1.0.2",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -28,9 +32,11 @@
     "@angular/cli": "~8.0.1",
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
-    "@types/node": "~8.9.4",
+    "@types/icheck": "^0.8.29",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.29",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
