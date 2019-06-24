@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable, observable } from 'rxjs';
-import {map, filter, catchError, mergeMap, tap, switchMap} from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import {map, tap, switchMap } from 'rxjs/operators';
 import { Modulo } from './api/modulo.interface';
 import { User } from './api/user.interface';
 import { Token } from './api/security/token.class';
@@ -42,19 +42,19 @@ export class UserService {
                   console.log("UserService->getClientSecret --> Obtido http response object")
                   console.log(httpResponse.body)
                   return httpResponse.body
+              }),
+              tap( serverAccessInfo => {
+                this.serverAccessInfo = serverAccessInfo
               })
             )
   }
 
-  login(cpf: number, senha: string):Observable<Token | null>{
-    let url = `http://127.0.0.1:8000/oauth/token`
-    
+  getToken(): Observable<Token | null>{
     if(this.serverAccessInfo == null || undefined){
-      this.getServerAccessInfo(cpf, senha).subscribe(
-
-        )
+      return throwError('server access info not exists')
     }
-    
+
+    let url = `http://127.0.0.1:8000/oauth/token`
 
     return this.http.post< Token | null>(url, {
       "grant_type": "password",
@@ -72,11 +72,33 @@ export class UserService {
               console.log(token)
               return token
             }
-            console.log("UserService ==> Erro ao logar usuário: cpf ou senha não conferem")
-            return null
+              console.log("UserService ==> Erro ao logar usuário: cpf ou senha não conferem")
+              return null
           }
         )
-      )    
+      ) 
+  }
+
+  login(cpf: number, senha: string): Observable<Token | null>{
+     
+    if(this.serverAccessInfo == null || undefined){
+      console.log(`UserService->login --> getting server access info [cpf=${cpf}]`)
+      return this.getServerAccessInfo(cpf, senha)
+      .pipe(
+        switchMap(
+          resp => {
+            console.log(`UserService->login --> [IF] getting token [cpf=${cpf}]`)
+            return this.getToken()
+          }
+        )
+      )
+    }else{
+      console.log(`UserService->login --> [ELSE] getting token [cpf=${cpf}]`)
+      return this.getToken()
+    }
+    
+
+       
   }
 
   users(): Observable<Object>{
