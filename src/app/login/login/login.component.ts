@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
 
   login(form: {cpf: number, senha: string}){
     
-    console.log('validando login')
+    console.log('validando login 1')
     this.userService.login(form.cpf, form.senha).subscribe(
       user => {
         if(user instanceof Object) {
+          console.log('validando login 2')
+          console.log(user)
           this.userService.modulos().subscribe(
             mods => {
               console.log("LoginComponent --> modulos obtidos")

@@ -1,123 +1,136 @@
 {
-    "users": [
+  "users": [
     {
-        "id": 1,
-        "nome": "Robison Pereira Machado",
-        "cpf": "1",
-        "senha": "1"
-    }, {
-        "id": 2,
-        "nome": "Letícia Pires Magalhães Machado",
-        "cpf": "1234",
-        "senha": "1234"
-        
+      "id": 1,
+      "nome": "Robison Pereira Machado",
+      "cpf": "1",
+      "senha": "1"
+    },
+    {
+      "id": 2,
+      "nome": "Letícia Pires Magalhães Machado",
+      "cpf": "1234",
+      "senha": "1234"
+    },
+    {
+      "grant_type": "password",
+      "client_id": "3",
+      "client_secret": "fKD5ZBPNuU1IoaxuDydyBYOxECNUmCBgb6IyBgnl",
+      "username": "1",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "grant_type": "password",
+      "client_id": "3",
+      "client_secret": "fKD5ZBPNuU1IoaxuDydyBYOxECNUmCBgb6IyBgnl",
+      "username": "1",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "grant_type": "password",
+      "client_id": "3",
+      "client_secret": "fKD5ZBPNuU1IoaxuDydyBYOxECNUmCBgb6IyBgnl",
+      "username": "1",
+      "password": "1",
+      "id": 5
     }
-    ],
-
-
-    "modulos": [
-        {
-            "id": 1,
-            "nome": "Serviços Urbanos",
-            "abreviacao": "SU",
-            "font-awesome-icon": "fa fa-lightbulb-o",
-            "ion-icon": "",
-            "cor-preferida": "verde"
-        },
-
-        {
-            "id": 2,
-            "nome": "Iluminação Pública",
-            "abreviacao": "IP",
-            "font-awesome-icon": "fa fa-lightbulb-o",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        },
-        {
-            "id": 3,
-            "nome": "Cemitério",
-            "abreviacao": "Cem",
-            "font-awesome-icon": "fa fa-cross",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        },
-        {
-            "id": 4,
-            "nome": "Patrimônio",
-            "abreviacao": "Pat",
-            "font-awesome-icon": "fa fa-cross",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        },
-        {
-            "id": 5,
-            "nome": "Frotas",
-            "abreviacao": "Fro",
-            "font-awesome-icon": "fa fa-cross",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        },
-        {
-            "id": 6,
-            "nome": "Arquivo",
-            "abreviacao": "Arq",
-            "font-awesome-icon": "fa fa-cross",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        },
-        {
-            "id": 7,
-            "nome": "Recursos Humanos",
-            "abreviacao": "RH",
-            "font-awesome-icon": "fa fa-cross",
-            "ion-icon": "",
-            "cor-preferida": "amarela"
-        }
-
-        ],
-
-    "permissoes": [
-        {
-            "id": 1,
-            "nome": "CRIAR"
-        },
-        {
-            "id": 2,
-            "nome": "LER"
-        },
-        {
-            "id": 3,
-            "nome": "ATUALIZAR"
-        },
-        {
-            "id": 4,
-            "nome": "EXCLUIR"
-        }
-    ],
-
-    "tipos_usuarios": [
-        {
-            "id": 1,
-            "nome": "funcionário"
-        },
-        {
-            "id": 2,
-            "nome": "cidadão"
-        },
-        {
-            "id": 3,
-            "nome": "público"
-        }
-    ],
-
-    "usuario_tipo_usuario":[
-        {
-            "usuario_id": 1,
-            "tipo_usuario_id": "1"
-        }
-    ]
-
-
-
-
+  ],
+  "modulos": [
+    {
+      "id": 1,
+      "nome": "Serviços Urbanos",
+      "abreviacao": "SU",
+      "font-awesome-icon": "fa fa-lightbulb-o",
+      "ion-icon": "",
+      "cor-preferida": "verde"
+    },
+    {
+      "id": 2,
+      "nome": "Iluminação Pública",
+      "abreviacao": "IP",
+      "font-awesome-icon": "fa fa-lightbulb-o",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    },
+    {
+      "id": 3,
+      "nome": "Cemitério",
+      "abreviacao": "Cem",
+      "font-awesome-icon": "fa fa-cross",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    },
+    {
+      "id": 4,
+      "nome": "Patrimônio",
+      "abreviacao": "Pat",
+      "font-awesome-icon": "fa fa-cross",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    },
+    {
+      "id": 5,
+      "nome": "Frotas",
+      "abreviacao": "Fro",
+      "font-awesome-icon": "fa fa-cross",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    },
+    {
+      "id": 6,
+      "nome": "Arquivo",
+      "abreviacao": "Arq",
+      "font-awesome-icon": "fa fa-cross",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    },
+    {
+      "id": 7,
+      "nome": "Recursos Humanos",
+      "abreviacao": "RH",
+      "font-awesome-icon": "fa fa-cross",
+      "ion-icon": "",
+      "cor-preferida": "amarela"
+    }
+  ],
+  "permissoes": [
+    {
+      "id": 1,
+      "nome": "CRIAR"
+    },
+    {
+      "id": 2,
+      "nome": "LER"
+    },
+    {
+      "id": 3,
+      "nome": "ATUALIZAR"
+    },
+    {
+      "id": 4,
+      "nome": "EXCLUIR"
+    }
+  ],
+  "tipos_usuarios": [
+    {
+      "id": 1,
+      "nome": "funcionário"
+    },
+    {
+      "id": 2,
+      "nome": "cidadão"
+    },
+    {
+      "id": 3,
+      "nome": "público"
+    }
+  ],
+  "usuario_tipo_usuario": [
+    {
+      "usuario_id": 1,
+      "tipo_usuario_id": "1"
+    }
+  ]
 }
